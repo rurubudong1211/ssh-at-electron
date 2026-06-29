@@ -1,0 +1,25 @@
+export const ipcChannels = [
+  'load_ssh_config',
+  'save_ssh_config',
+  'serialize_ssh_config',
+  'parse_ssh_config',
+  'add_host',
+  'update_host',
+  'delete_host',
+  'search_hosts',
+  'scan_ssh_keys',
+  'get_key_fingerprint',
+  'generate_ssh_key',
+  'delete_ssh_key',
+  'read_public_key',
+  'list_backups',
+  'restore_backup',
+  'delete_backup',
+  'open_config_dir',
+  'load_settings',
+  'save_settings',
+  'dialog_confirm',
+  'clipboard_write_text',
+] as const
+
+export type IpcChannel = typeof ipcChannels[number]

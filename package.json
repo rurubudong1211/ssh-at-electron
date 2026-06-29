@@ -1,0 +1,71 @@
+{
+  "name": "ssh-at-electron",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "out/main/index.js",
+  "description": "SSH-AT rebuilt with React, TypeScript, and Electron.",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "typecheck": "tsc -b --noEmit",
+    "build": "npm run typecheck && electron-vite build",
+    "test": "tsx --test tests/*.test.ts",
+    "dist": "npm run build && electron-builder",
+    "smoke": "electron . --smoke-test"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@monaco-editor/react": "^4.6.0",
+    "@mui/icons-material": "^6.1.0",
+    "@mui/material": "^6.1.0",
+    "@tanstack/react-query": "^5.59.0",
+    "i18next": "^26.3.1",
+    "i18next-browser-languagedetector": "^8.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^17.0.8",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^3.0.0",
+    "terser": "^5.48.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.3"
+  },
+  "build": {
+    "appId": "com.sshat.client",
+    "productName": "SSH-AT",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "assets/icons/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/icon.ico",
+      "signAndEditExecutable": false
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icons/icon.icns"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icons"
+    }
+  }
+}

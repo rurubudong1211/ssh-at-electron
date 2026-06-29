@@ -1,0 +1,13 @@
+node_modules/
+out/
+release/
+build/
+dist/
+*.tsbuildinfo
+.idea/
+.vscode/
+*.log
+.env
+.env.*
+!.env.example
+AGENTS.md
