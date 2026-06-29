@@ -81,7 +81,7 @@ SSH-AT 默认会读取或写入以下本机路径：
 
 ## 环境要求
 
-- Node.js 20+ 或 22+
+- Node.js 20.x / 22.x LTS，推荐 22.x
 - npm
 - OpenSSH 工具链
   - 需要系统可执行 `ssh-keygen`
